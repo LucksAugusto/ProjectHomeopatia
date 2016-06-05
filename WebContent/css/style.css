@@ -1,0 +1,22 @@
+.card-table {
+   height: auto;
+   z-index: 2;
+   overflow: visible;
+}
+
+.card {
+   margin: 2% auto;
+}
+
+.card-title {
+   background: #455A64; 
+   color: #FEFEFE;
+}
+
+.fab-bottom-right {
+   position: absolute;
+   top: 0px;
+   right: 28px;
+   transform: translate(0px, 28px);
+   z-index: 900;
+}
