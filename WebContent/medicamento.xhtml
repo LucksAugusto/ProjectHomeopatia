@@ -42,83 +42,81 @@
   	 <div class="mdl-card mdl-cell mdl-cell--1-offset mdl-cell--10-col mdl-cell--8-col-tablet mdl-shadow--8dp mdl-color--grey-100">
   	 <div class="mdl-grid">
   	  <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet">
-		<form action="#">
+		<h:form action="#">
 			<div class="mdl-grid">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<input class="mdl-textfield__input" type="text" id="nome"/>
-					<label class="mdl-textfield__label mdl-color-text--grey-600" for="nome">Nome do Medicamento...</label>
+					<h:inputText class="mdl-textfield__input" type="text" id="nome"/>
+					<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="nome"/>Nome do Medicamento...
 				</div>
 			</div>
 			<div class="mdl-grid">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<input class="mdl-textfield__input" type="text" id="potencia"/>
-					<label class="mdl-textfield__label mdl-color-text--grey-600" for="potencia">Potência...</label>
+					<h:inputText class="mdl-textfield__input" type="text" id="potencia"/>
+					<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="potencia"/>Potência...
 				</div>
 			</div>
 			<div class="mdl-grid">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="CRM"/>
-   					<label class="mdl-textfield__label mdl-color-text--grey-600" for="CRM">CRM Médico...</label>
+					<h:inputText class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="CRM"/>
+   					<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="CRM"/>CRM Médico...
    					<span class="mdl-textfield__error">Digite o CRM!</span>
 				</div>
 			</div>
 			<div class="mdl-grid">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<input class="mdl-textfield__input" type="text" id="paciente"/>
-					<label class="mdl-textfield__label mdl-color-text--grey-600" for="paciente">Paciente...</label>
+					<h:inputText class="mdl-textfield__input" type="text" id="paciente"/>
+					<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="paciente"/>Paciente...
 				</div>
 			</div>
 			<div class="mdl-grid">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="idLaboratorio"/>
-   					<label class="mdl-textfield__label mdl-color-text--grey-600" for="idLaboratorio">ID Laboratório...</label>
+					<h:inputText class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="idLaboratorio"/>
+   					<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="idLaboratorio"/>ID Laboratório...
    					<span class="mdl-textfield__error">Digite o ID!</span>
 				</div>
 			</div>
 			<div class="mdl-grid">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<input class="mdl-textfield__input" type="text" id="dataManipulacao"/>
-					<label class="mdl-textfield__label mdl-color-text--grey-600" for="dataManipulacao">Data de Manipulação...</label>
+					<h:inputText class="mdl-textfield__input" type="text" id="dataManipulacao"/>
+					<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="dataManipulacao"/>Data de Manipulação...
 				</div>
 			</div>
 			<div class="mdl-grid">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<input class="mdl-textfield__input" type="text" id="dataVencimento"/>
-					<label class="mdl-textfield__label mdl-color-text--grey-600" for="dataVencimento">Data de Vencimento...</label>
+					<h:inputText class="mdl-textfield__input" type="text" id="dataVencimento"/>
+					<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="dataVencimento"/>Data de Vencimento...
 				</div>
 			</div>
 			<div class="mdl-grid">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 					<textarea class="mdl-textfield__input" type="text" rows= "5" id="composicao" ></textarea>
-    				<label class="mdl-textfield__label mdl-color-text--grey-600" for="composicao">Composição...</label>
+    				<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="composicao"/>Composição...
 				</div>
 			</div>
 			<div class="mdl-grid">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 					<textarea class="mdl-textfield__input" type="text" rows= "5" id="conteudo" ></textarea>
-    				<label class="mdl-textfield__label mdl-color-text--grey-600" for="conteudo">Conteudo...</label>
+    				<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="conteudo"/>Conteudo...
 				</div>
 			</div>	
 			<div class="mdl-grid">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<input class="mdl-textfield__input" type="text" id="embalagem"/>
-					<label class="mdl-textfield__label mdl-color-text--grey-600" for="embalagem">Embalagem...</label>
+					<h:inputText class="mdl-textfield__input" type="text" id="embalagem"/>
+					<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="embalagem"/>Embalagem...
 				</div>
 			</div>
 			<div class="mdl-grid">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 					<textarea class="mdl-textfield__input" type="text" rows= "5" id="observacao" ></textarea>
-    				<label class="mdl-textfield__label mdl-color-text--grey-600" for="observacao">Observação...</label>
+    				<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="observacao"/>Observação...
 				</div>
 			</div>	
 			<div class="mdl-grid">
 			<div class="mdl-cell mdl-cell--3-offset">
-				<button class="mdl-button mdl-js-button mdl-button--primary">
-  					Cadastrar
-				</button>
+				<h:commandButton value="Cadastrar" class="mdl-button mdl-js-button mdl-button--primary"/>
 			</div>
 			</div>
-		</form>
+		</h:form>
 	</div>
 	</div>
 	</div>         
