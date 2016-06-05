@@ -1,13 +1,13 @@
 package entity;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class Receita {
 
 	private int idReceita;
 	private int crmMedico;
 	private String paciente;
-	private Date dataReceita;
+	private Date dataReceita  = new Date(); ;
 	
 	public int getIdReceita() {
 		return idReceita;

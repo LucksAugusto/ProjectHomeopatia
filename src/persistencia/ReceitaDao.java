@@ -26,8 +26,9 @@ public class ReceitaDao implements iReceitaDao{
 		String sql = "insert into Receita values (?,?,?)";
 		PreparedStatement stmt = con.prepareStatement(sql);
 		stmt.setInt(1, receita.getCrmMedico());
-		stmt.setString(1, receita.getPaciente());
-		stmt.setDate(1, receita.getDataReceita());
+		stmt.setString(2, receita.getPaciente());
+		java.sql.Date sd = new java.sql.Date( receita.getDataReceita().getTime() );
+		stmt.setDate(3, sd );
 		stmt.executeUpdate();
 		stmt.close();
 		gDao.fechaConexao();
@@ -98,9 +99,10 @@ public class ReceitaDao implements iReceitaDao{
 		String sql = "update Receita set crmMedico=?, paciente=?, data=? where idReceita=? ";
 		PreparedStatement stmt = con.prepareStatement(sql);
 		stmt.setInt(1, receita.getCrmMedico());
-		stmt.setString(1, receita.getPaciente());
-		stmt.setDate(1, receita.getDataReceita());
-		stmt.setInt(1, receita.getIdReceita());
+		stmt.setString(2, receita.getPaciente());
+		java.sql.Date sd = new java.sql.Date( receita.getDataReceita().getTime() );
+		stmt.setDate(3, sd );
+		stmt.setInt(4, receita.getIdReceita());
 		stmt.executeQuery();
 		stmt.close();
 		gDao.fechaConexao();

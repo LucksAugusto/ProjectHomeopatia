@@ -10,8 +10,8 @@ public class Medicamento {
 	private int crmMedico;
 	private String paciente;
 	private int idLaboratorio;
-	private Date dataManipulacao = new Date();;
-	private Date dataVencimento = new Date();;
+	private Date dataManipulacao = new Date();
+	private Date dataVencimento = new Date();
 	private String composicao;
 	private String conteudo;
 	private String embalagem;
