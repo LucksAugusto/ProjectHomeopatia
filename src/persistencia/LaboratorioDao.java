@@ -37,7 +37,7 @@ public class LaboratorioDao implements iLaboratorioDao {
 		stmt.setString(10, lab.getEmail());
 		stmt.setString(11, lab.getCoordenadas());
 		stmt.setString(12, lab.getAtendimento());
-		
+		stmt.executeUpdate();
 		stmt.close();
 		gDao.fechaConexao();
 	}

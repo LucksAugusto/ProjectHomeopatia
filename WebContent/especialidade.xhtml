@@ -42,21 +42,21 @@
   	<div class="mdl-grid">
   	 <div class="mdl-card mdl-cell mdl-cell--2-offset mdl-cell--8-col mdl-cell--8-col-tablet mdl-shadow--6dp">
   	 <div class="mdl-grid">
-		<form action="#">
+		<h:form action="#">
 			<div class="mdl-grid">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<input class="mdl-textfield__input" type="text" id="especialidade" value="#{especialidadeMB.Especialidade.especialidade}"/>
-					<label class="mdl-textfield__label" for="especialidade">Especialidade...</label>
+					<h:inputText class="mdl-textfield__input" type="text" id="especialidade" value="#{espmb.esp.especialidade}"/>
+					<h:outputLabel class="mdl-textfield__label" for="especialidade">Especialidade...</h:outputLabel>
 				</div>
 			</div>
 			<div class="mdl-grid">
 			<div class="mdl-cell mdl-cell--3-offset">
-				<button class="mdl-button mdl-js-button mdl-button--primary" action="#{especialidadeMB.adicionar}">
-  					Cadastrar
-				</button>
+				<h:commandButton class="mdl-button mdl-js-button mdl-button--primary" value ="Cadastrar" action="#{espmb.adicionar}"/>
+  					
+		
 			</div>
 			</div>
-		</form>
+		</h:form>
 	</div>
 	</div>  
 	</div>         

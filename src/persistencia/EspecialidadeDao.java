@@ -43,7 +43,7 @@ public class EspecialidadeDao implements iEspecialidadeDao {
 		String sql = "insert into Especialidade values (?)";
 		PreparedStatement stmt = con.prepareStatement(sql);
 		stmt.setString(1, especialidade.getEspecialidade());
-		stmt.executeQuery();
+		stmt.executeUpdate();
 		stmt.close();
 		gDao.fechaConexao();
 		

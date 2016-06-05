@@ -11,7 +11,7 @@ import javax.faces.context.FacesContext;
 import entity.Especialidade;
 import persistencia.EspecialidadeDao;
 
-@ManagedBean
+@ManagedBean(name="espmb")
 @SessionScoped
 public class EspecialidadeMB implements Serializable{
 
@@ -20,15 +20,37 @@ public class EspecialidadeMB implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private EspecialidadeDao especidalidadeDao = new EspecialidadeDao();
-	private Especialidade especialidade = new Especialidade();
+	private EspecialidadeDao especidalidadeDao;
+	private Especialidade esp;
 	
+	public EspecialidadeMB(){
+		esp = new Especialidade();
+		especidalidadeDao =new EspecialidadeDao();
+		
+	}
 	
+	public EspecialidadeDao getEspecidalidadeDao() {
+		return especidalidadeDao;
+	}
+
+	public void setEspecidalidadeDao(EspecialidadeDao especidalidadeDao) {
+		this.especidalidadeDao = especidalidadeDao;
+	}
+
+	public Especialidade getEsp() {
+		return esp;
+	}
+
+	public void setEsp(Especialidade esp) {
+		this.esp = esp;
+	}
+
 	
-	public String adicionar(){
+	public void adicionar(){
 		try {
-			especidalidadeDao.cadastraEspecialidade(especialidade);
-			especialidade = new Especialidade();
+			especidalidadeDao.cadastraEspecialidade(esp);
+			esp = new Especialidade();
+			
 			FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Especialidade adicionada com sucesso", "");
 			FacesContext.getCurrentInstance().addMessage(null, msg);
 		} catch (SQLException e) {
@@ -36,7 +58,7 @@ public class EspecialidadeMB implements Serializable{
 			e.printStackTrace();
 		}
 		
-		return "";
 	}
+
 
 }

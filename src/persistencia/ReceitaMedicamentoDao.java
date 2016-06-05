@@ -30,7 +30,7 @@ public class ReceitaMedicamentoDao implements iReceitaMedicamentoDao {
 				stmt.setInt(1, itensReceita.getIdReceita());
 				stmt.setString(2, itensReceita.getNomeMedicamento());
 				stmt.setString(3, itensReceita.getPotencia());
-				stmt.executeQuery();
+				stmt.executeUpdate();
 			}
 			
 		stmt.close();

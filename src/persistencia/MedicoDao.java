@@ -37,7 +37,7 @@ public class MedicoDao implements iMedicoDao {
 		stmt.setString(11, medico.getCelular());
 		stmt.setString(12, medico.getEmail());
 		stmt.setString(13, medico.getCoordenadas());
-		stmt.executeQuery();
+		stmt.executeUpdate();
 	}
 
 	@Override

@@ -37,7 +37,7 @@ public class MedicamentoDao implements iMedicamentoDao {
 		stmt.setString(9, medicamento.getConteudo());
 		stmt.setString (10, medicamento.getEmbalagem());;
 		stmt.setString(11, medicamento.getObservacao());
-		stmt.executeQuery();
+		stmt.executeUpdate();
 		stmt.close();
 		gDao.fechaConexao();
 	}

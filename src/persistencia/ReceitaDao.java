@@ -28,7 +28,7 @@ public class ReceitaDao implements iReceitaDao{
 		stmt.setInt(1, receita.getCrmMedico());
 		stmt.setString(1, receita.getPaciente());
 		stmt.setDate(1, receita.getDataReceita());
-		stmt.executeQuery();
+		stmt.executeUpdate();
 		stmt.close();
 		gDao.fechaConexao();
 		
