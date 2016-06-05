@@ -38,4 +38,16 @@ public class EspecialidadeDao implements iEspecialidadeDao {
 		return listaEspecialidade;
 	}
 
+	@Override
+	public void cadastraEspecialidade(Especialidade especialidade) throws SQLException {
+		String sql = "insert into Especialidade values (?)";
+		PreparedStatement stmt = con.prepareStatement(sql);
+		stmt.setString(1, especialidade.getEspecialidade());
+		stmt.executeQuery();
+		stmt.close();
+		gDao.fechaConexao();
+		
+		
+	}
+
 }

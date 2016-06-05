@@ -45,13 +45,13 @@
 		<form action="#">
 			<div class="mdl-grid">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<input class="mdl-textfield__input" type="text" id="especialidade"/>
+					<input class="mdl-textfield__input" type="text" id="especialidade" value="#{especialidadeMB.Especialidade.especialidade}"/>
 					<label class="mdl-textfield__label" for="especialidade">Especialidade...</label>
 				</div>
 			</div>
 			<div class="mdl-grid">
 			<div class="mdl-cell mdl-cell--3-offset">
-				<button class="mdl-button mdl-js-button mdl-button--primary">
+				<button class="mdl-button mdl-js-button mdl-button--primary" action="#{especialidadeMB.adicionar}">
   					Cadastrar
 				</button>
 			</div>
