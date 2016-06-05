@@ -23,7 +23,7 @@
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation. We hide it in small screens. -->
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Cancelar</a>
       </nav>
     </div>
   </header>
@@ -44,77 +44,90 @@
   	  <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet">
 		<h:form action="#">
 			<div class="mdl-grid">
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<h:inputText class="mdl-textfield__input" type="text" id="nome" value="#{labmb.lab.nome}"/>
-					<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="nome"/>Nome do Laboratório...>
+			<div class="mdl-cell"></div>
+			<div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet">
+				<div class="mdl-grid">
+				<div class="mdl-cell mdl-cell--12-col cel-cell--12-col-tablet">
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<h:inputText class="mdl-textfield__input" type="text" id="nome" value="#{labmb.lab.nome}"/>
+						<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="nome" value="Nome do Laboratório..."/>
+					</div>
+				</div>
+				</div>
+				<div class="mdl-grid">
+				<div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet">
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<h:inputText class="mdl-textfield__input" type="text" id="endereco" value="#{labmb.lab.endereco}"/>
+						<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="endereco" value="Endereço..."/>
+					</div>
+				</div>
+				<div class="mdl-cell mdl-cell--3-col mdl-cell--3-col-tablet">
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<h:inputText class="mdl-textfield__input" type="text" id="numero"  value="#{labmb.lab.numero}"/>
+	   					<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="numero" value="Número..."/>
+					</div>
+				</div>
+				</div>
+				<div class="mdl-grid">
+				<div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet">
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<h:inputText class="mdl-textfield__input" type="text" id="bairro"  value="#{labmb.lab.bairro}"/>
+						<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="bairro" value="Bairro..."/>
+					</div>
+				</div>
+				<div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet">
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<h:inputText class="mdl-textfield__input" type="text" id="cep"  value="#{labmb.lab.cep}"/>
+	   					<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="cep" value="CEP..."/>
+					</div>
+				</div>
+				</div>
+				<div class="mdl-grid">
+				<div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet">
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<h:inputText class="mdl-textfield__input" type="text" id="cidade"  value="#{labmb.lab.cidade}"/>
+						<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="cidade" value="Cidade..."/>
+					</div>
+				</div>
+				<div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet">
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<h:inputText class="mdl-textfield__input" type="text" id="estado" value="#{labmb.lab.estado}"/>
+						<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="estado" value="Estado..."/>
+					</div>
+				</div>
+				</div>
+				<div class="mdl-grid">
+				<div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet">
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<h:inputText class="mdl-textfield__input" type="text" id="telefone" value="#{labmb.lab.telefone}"/>
+	   					<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="telefone" value="Telefone..."/>
+					</div>
+				</div>
+				<div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet">
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<h:inputText class="mdl-textfield__input" type="text" id="fax" value="#{labmb.lab.fax}"/>
+	   					<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="fax" value="Fax..."/>
+					</div>
+				</div>
+				</div>
+				<div class="mdl-grid">
+				<div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet">
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<h:inputText class="mdl-textfield__input" type="text" id="atendimento"  value="#{labmb.lab.atendimento}"/>
+						<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="atendimento" value="Atendimento..."/>
+					</div>
+				</div>
+				<div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet">
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<h:inputText class="mdl-textfield__input" type="text" id="email" value="#{labmb.lab.email}"/>
+						<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="email" value="E-Mail..."/>
+					</div>
+				</div>
 				</div>
 			</div>
-			<div class="mdl-grid">
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<h:inputText class="mdl-textfield__input" type="text" id="endereco" value="#{labmb.lab.endereco}"/>
-					<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="endereco"/>Endereço...
-				</div>
 			</div>
 			<div class="mdl-grid">
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<h:inputText class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="numero"  value="#{labmb.lab.numero}"/>
-   					<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="numero"/>Número...
-   					<span class="mdl-textfield__error">Digite um número!</span>
-				</div>
-			</div>
-			<div class="mdl-grid">
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<h:inputText class="mdl-textfield__input" type="text" id="bairro"  value="#{labmb.lab.bairro}"/>
-					<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="bairro"/>Bairro...
-				</div>
-			</div>
-			<div class="mdl-grid">
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<h:inputText class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="cep"  value="#{labmb.lab.cep}"/>
-   					<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="cep"/>CEP...
-   					<span class="mdl-textfield__error">Digite o CEP!</span>
-				</div>
-			</div>
-			<div class="mdl-grid">
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<h:inputText class="mdl-textfield__input" type="text" id="cidade"  value="#{labmb.lab.cidade}"/>
-					<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="cidade"/>Cidade...
-				</div>
-			</div>
-			<div class="mdl-grid">
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<h:inputText class="mdl-textfield__input" type="text" id="estado" value="#{labmb.lab.estado}"/>
-					<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="estado"/>Estado...
-				</div>
-			</div>
-			<div class="mdl-grid">
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<h:inputText class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="telefone" value="#{labmb.lab.telefone}"/>
-   					<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="telefone"/>Telefone...
-   					<span class="mdl-textfield__error">Digite o Telefone!</span>
-				</div>
-			</div>
-			<div class="mdl-grid">
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<h:inputText class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="fax" value="#{labmb.lab.fax}"/>
-   					<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="fax"/>Fax...
-   					<span class="mdl-textfield__error">Digite o Fax!</span>
-				</div>
-			</div>
-			<div class="mdl-grid">
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<h:inputText class="mdl-textfield__input" type="text" id="atendimento"  value="#{labmb.lab.atendimento}"/>
-					<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="atendimento"/>Atendimento...
-				</div>
-			</div>
-			<div class="mdl-grid">
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<h:inputText class="mdl-textfield__input" type="text" id="email" value="#{labmb.lab.email}"/>
-					<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="email"/>E-Mail...
-				</div>
-			</div>
-			<div class="mdl-grid">
-			<div class="mdl-cell mdl-cell--3-offset">
+			<div class="mdl-cell mdl-cell--5-offset">
 				<h:commandButton class="mdl-button mdl-js-button mdl-button--primary" value="Cadastrar" action="#{labmb.adicionar}"/>
 			</div>
 			</div>
@@ -122,9 +135,8 @@
 	</div>
 	</div> 
 		<p:growl id="messages" showDetail="true" />
-		<p:gmap id="gmap" center="36.890257,30.707417" zoom="13" type="HYBRID" style="width:100%;height:400px"
-		    model="#{addMarkersView.emptyModel}" onPointClick="handlePointClick(event);" widgetVar="map" />
-		 
+		<p:gmap id="gmap" center="-23.5280419,-46.527416" zoom="15" type="ROADMAP" style="width:100%;height:400px"
+		    model="#{addMarkersView.emptyModel}" onPointClick="handlePointClick(event);" widgetVar="map" /> 
 		<p:dialog widgetVar="dlg" showEffect="fade">
 		    <h:form prependId="false">
 		        <h:panelGrid columns="2">

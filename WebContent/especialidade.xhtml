@@ -23,7 +23,7 @@
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation. We hide it in small screens. -->
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Cancelar</a>
       </nav>
     </div>
   </header>
@@ -40,20 +40,18 @@
   <div class="page-content">
   <!-- Your content goes here -->
   	<div class="mdl-grid">
-  	 <div class="mdl-card mdl-cell mdl-cell--2-offset mdl-cell--8-col mdl-cell--8-col-tablet mdl-shadow--6dp">
+  	 <div class="mdl-card mdl-cell mdl-cell--2-offset mdl-cell--10-col mdl-cell--10-col-tablet mdl-shadow--6dp">
   	 <div class="mdl-grid">
 		<h:form action="#">
 			<div class="mdl-grid">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 					<h:inputText class="mdl-textfield__input" type="text" id="especialidade" value="#{espmb.esp.especialidade}"/>
-					<h:outputLabel class="mdl-textfield__label" for="especialidade">Especialidade...</h:outputLabel>
+					<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="especialidade">Especialidade...</h:outputLabel>
 				</div>
 			</div>
 			<div class="mdl-grid">
 			<div class="mdl-cell mdl-cell--3-offset">
 				<h:commandButton class="mdl-button mdl-js-button mdl-button--primary" value ="Cadastrar" action="#{espmb.adicionar}"/>
-  					
-		
 			</div>
 			</div>
 		</h:form>
