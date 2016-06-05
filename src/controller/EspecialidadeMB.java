@@ -20,23 +20,11 @@ public class EspecialidadeMB implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private EspecialidadeDao especidalidadeDao;
-	private Especialidade esp;
+	private EspecialidadeDao especidalidadeDao = new EspecialidadeDao();;
+	private Especialidade esp = new Especialidade();
 	
-	public EspecialidadeMB(){
-		esp = new Especialidade();
-		especidalidadeDao =new EspecialidadeDao();
-		
-	}
+
 	
-	public EspecialidadeDao getEspecidalidadeDao() {
-		return especidalidadeDao;
-	}
-
-	public void setEspecidalidadeDao(EspecialidadeDao especidalidadeDao) {
-		this.especidalidadeDao = especidalidadeDao;
-	}
-
 	public Especialidade getEsp() {
 		return esp;
 	}

@@ -45,75 +45,79 @@
 		<h:form action="#">
 			<div class="mdl-grid">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<h:inputText class="mdl-textfield__input" type="text" id="nome"/>
+					<h:inputText class="mdl-textfield__input" type="text" id="nome" value="#{medimb.med.nome}"/>
 					<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="nome"/>Nome do Medicamento...
 				</div>
 			</div>
 			<div class="mdl-grid">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<h:inputText class="mdl-textfield__input" type="text" id="potencia"/>
+					<h:inputText class="mdl-textfield__input" type="text" id="potencia" value="#{medimb.med.potencia}"/>
 					<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="potencia"/>Potência...
 				</div>
 			</div>
 			<div class="mdl-grid">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<h:inputText class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="CRM"/>
+					<h:inputText class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="CRM"  value="#{medimb.med.crmMedico}"/>
    					<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="CRM"/>CRM Médico...
    					<span class="mdl-textfield__error">Digite o CRM!</span>
 				</div>
 			</div>
 			<div class="mdl-grid">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<h:inputText class="mdl-textfield__input" type="text" id="paciente"/>
+					<h:inputText class="mdl-textfield__input" type="text" id="paciente"  value="#{medimb.med.paciente}"/>
 					<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="paciente"/>Paciente...
 				</div>
 			</div>
 			<div class="mdl-grid">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<h:inputText class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="idLaboratorio"/>
+					<h:inputText class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="idLaboratorio"  value="#{medimb.med.idLaboratorio}"/>/>
    					<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="idLaboratorio"/>ID Laboratório...
    					<span class="mdl-textfield__error">Digite o ID!</span>
 				</div>
 			</div>
 			<div class="mdl-grid">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<h:inputText class="mdl-textfield__input" type="text" id="dataManipulacao"/>
+					<h:inputText class="mdl-textfield__input" type="text" id="dataManipulacao"  value="#{medimb.med.dataManipulacao}">
+							<f:convertDateTime	pattern="dd/MM/yyyy" locale="pt_BR" timeZone="America/Sao_Paulo"/>
+					</h:inputText>
 					<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="dataManipulacao"/>Data de Manipulação...
 				</div>
 			</div>
 			<div class="mdl-grid">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<h:inputText class="mdl-textfield__input" type="text" id="dataVencimento"/>
+					<h:inputText class="mdl-textfield__input" type="text" id="dataVencimento"  value="#{medimb.med.dataVencimento}">
+						<f:convertDateTime	pattern="dd/MM/yyyy" locale="pt_BR" timeZone="America/Sao_Paulo"/>
+					</h:inputText>
 					<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="dataVencimento"/>Data de Vencimento...
 				</div>
 			</div>
 			<div class="mdl-grid">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<textarea class="mdl-textfield__input" type="text" rows= "5" id="composicao" ></textarea>
+					<h:inputTextarea class="mdl-textfield__input" type="text" rows= "5" id="composicao" value="#{medimb.med.composicao}"></h:inputTextarea>
     				<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="composicao"/>Composição...
 				</div>
 			</div>
 			<div class="mdl-grid">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<textarea class="mdl-textfield__input" type="text" rows= "5" id="conteudo" ></textarea>
+					<h:inputTextarea class="mdl-textfield__input" type="text" rows= "5" id="conteudo" value="#{medimb.med.conteudo}"></h:inputTextarea>
     				<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="conteudo"/>Conteudo...
 				</div>
 			</div>	
 			<div class="mdl-grid">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<h:inputText class="mdl-textfield__input" type="text" id="embalagem"/>
+					<h:inputText class="mdl-textfield__input" type="text" id="embalagem" value="#{medimb.med.embalagem}"/>
 					<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="embalagem"/>Embalagem...
 				</div>
 			</div>
 			<div class="mdl-grid">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<textarea class="mdl-textfield__input" type="text" rows= "5" id="observacao" ></textarea>
+					<h:inputTextarea class="mdl-textfield__input" type="text" rows= "5" id="observacao" value="#{medimb.med.observacao}" ></h:inputTextarea>
     				<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="observacao"/>Observação...
 				</div>
 			</div>	
 			<div class="mdl-grid">
 			<div class="mdl-cell mdl-cell--3-offset">
-				<h:commandButton value="Cadastrar" class="mdl-button mdl-js-button mdl-button--primary"/>
+				<h:commandButton value="Cadastrar" class="mdl-button mdl-js-button mdl-button--primary" action="#{medimb.cadastrar}"/>
 			</div>
 			</div>
 		</h:form>

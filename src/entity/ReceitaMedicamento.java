@@ -24,6 +24,5 @@ public class ReceitaMedicamento {
 	public void setPotencia(String potencia) {
 		this.potencia = potencia;
 	}
-	
-	
+		
 }

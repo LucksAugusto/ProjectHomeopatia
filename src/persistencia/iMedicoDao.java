@@ -13,6 +13,5 @@ public interface iMedicoDao {
 	public List<Medico> consultaMedicoNome(String nome) throws SQLException;
 	public void alterarMedico(Medico medico) throws SQLException;
 	public void excluirMedico(int crm) throws SQLException;
-	
-	
+
 }

@@ -28,11 +28,13 @@ public class MedicamentoDao implements iMedicamentoDao {
 		PreparedStatement stmt = con.prepareStatement(sql);
 		stmt.setString(1, medicamento.getNome());
 		stmt.setString(2, medicamento.getPotencia());
-		stmt.setInt (3, medicamento.getCrmMedico());
-		stmt.setString (4, medicamento.getPaciente());;
+		stmt.setString (3, medicamento.getPaciente());;
+		stmt.setInt (4, medicamento.getCrmMedico());
 		stmt.setInt (5, medicamento.getIdLaboratorio());;
-		stmt.setDate (6, medicamento.getDataManipulacao());
-		stmt.setDate (7, medicamento.getDataVencimento());
+		java.sql.Date sd = new java.sql.Date( medicamento.getDataManipulacao().getTime() );
+		stmt.setDate(6, sd );
+		java.sql.Date sd2 = new java.sql.Date( medicamento.getDataVencimento().getTime() );
+		stmt.setDate (7, sd2 );
 		stmt.setString (8, medicamento.getComposicao());;
 		stmt.setString(9, medicamento.getConteudo());
 		stmt.setString (10, medicamento.getEmbalagem());;
@@ -149,8 +151,10 @@ public class MedicamentoDao implements iMedicamentoDao {
 		stmt.setInt (3, medicamento.getCrmMedico());
 		stmt.setString (4, medicamento.getPaciente());;
 		stmt.setInt (5, medicamento.getIdLaboratorio());;
-		stmt.setDate (6, medicamento.getDataManipulacao());
-		stmt.setDate (7, medicamento.getDataVencimento());
+		java.sql.Date sd = new java.sql.Date( medicamento.getDataManipulacao().getTime() );
+		stmt.setDate(6, sd );
+		java.sql.Date sd2 = new java.sql.Date( medicamento.getDataVencimento().getTime() );
+		stmt.setDate (7, sd2 );
 		stmt.setString (8, medicamento.getComposicao());;
 		stmt.setString(9, medicamento.getConteudo());
 		stmt.setString (10, medicamento.getEmbalagem());;
@@ -172,7 +176,5 @@ public class MedicamentoDao implements iMedicamentoDao {
 		gDao.fechaConexao();
 		
 	}
-
-	
 
 }

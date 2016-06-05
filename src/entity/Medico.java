@@ -95,8 +95,4 @@ public class Medico {
 		this.coordenadas = coordenadas;
 	}
 	
-	
-	
-	
-	
 }

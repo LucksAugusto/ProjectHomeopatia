@@ -1,6 +1,6 @@
 package entity;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class Medicamento {
 
@@ -10,8 +10,8 @@ public class Medicamento {
 	private int crmMedico;
 	private String paciente;
 	private int idLaboratorio;
-	private Date dataManipulacao;
-	private Date dataVencimento;
+	private Date dataManipulacao = new Date();;
+	private Date dataVencimento = new Date();;
 	private String composicao;
 	private String conteudo;
 	private String embalagem;
@@ -90,7 +90,5 @@ public class Medicamento {
 	public void setIdLaboratorio(int idLaboratorio) {
 		this.idLaboratorio = idLaboratorio;
 	}
-	
-	
 	
 }
