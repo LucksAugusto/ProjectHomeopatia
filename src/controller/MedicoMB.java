@@ -2,6 +2,8 @@ package controller;
 
 import java.io.Serializable;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -22,6 +24,7 @@ public class MedicoMB implements Serializable{
 	
 	private MedicoDao medDao;
 	private Medico med;
+	private List<Medico> lista = new ArrayList<Medico>();
 	
 	public MedicoMB(){
 		med = new Medico();
@@ -46,6 +49,33 @@ public class MedicoMB implements Serializable{
 		
 	}
 
+	public void remover(){
+		try {
+			medDao.excluirMedico(med.getCrm());
+			med = new Medico();
+			
+			FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Medico excluido com sucesso", "");
+			FacesContext.getCurrentInstance().addMessage(null, msg);
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		
+	}
+
+	public void pesquisar() { 
+		try {
+			setLista(medDao.consultaMedicoNome(med.getNome()));
+			FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, 
+				"Foram encontrados " + lista.size() + " registros", "");
+		FacesContext.getCurrentInstance().addMessage(null, msg);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	}
 
 	public Medico getMed() {
 		return med;
@@ -55,5 +85,12 @@ public class MedicoMB implements Serializable{
 	public void setMed(Medico med) {
 		this.med = med;
 	}
+	public void setLista(List<Medico> lista) {
+		this.lista = lista;
+	}
+	public List<Medico> getLista() {
+		return lista;
+	}
+
 
 }
