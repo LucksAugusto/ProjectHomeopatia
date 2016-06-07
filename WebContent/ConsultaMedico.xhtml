@@ -69,24 +69,42 @@
 					<div class="mdl-grid">
 					<div class="mdl-cell"></div>
 					<div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet">
-						<h:dataTable class="mdl-data-table mdl-js-data-table mdl-data-table--selectable dataSort" value="Pesquisar" action="#{medmb.pesquisar}" var="med">
-						  	<h:column>#{med.nome}					
-						         <f:facet class="mdl-data-table__cell--non-numeric" name="header">Nome Médico</f:facet>
+						<h:dataTable value="#{medMB.lista}" var="med" class="mdl-data-table mdl-js-data-table mdl-data-table--selectable dataSort">
+						  	<h:column headerText="Nome Médico">				
+						    	<f:facet class="mdl-data-table__cell--non-numeric" name="header">
+						    		<h:outputText value="Nome"/>
+						    	</f:facet>
+						    	<h:outputText value="#{med.nome}" />
 						    </h:column>
-						   <h:column>#{med.especialidade}    
-						      <f:facet class="mdl-data-table__cell--non-numeric" name="header">Especialidade</f:facet>
+						   <h:column headerText="Especialidade">    
+						      	<f:facet class="mdl-data-table__cell--non-numeric" name="header">
+						      		<h:outputText value="Especialidade"/>
+						      	</f:facet>
+						   		<h:outputText value="#{med.especialidade}" />
 						   </h:column>
-						     <h:column>#{med.endereco}    
-						      <f:facet class="mdl-data-table__cell--non-numeric" name="header">Endereço</f:facet>
+						     <h:column headerText="Endereço">   
+						      	<f:facet class="mdl-data-table__cell--non-numeric" name="header">
+						      		<h:outputText value="Endereço"/>
+						      	</f:facet>
+						   		<h:outputText value="#{med.endereco}" />
 						   </h:column>
-						   	<h:column>#{med.numero}					
-						         <f:facet class="mdl-data-table__cell--non-numeric" name="header">Numero</f:facet>
+						   	<h:column headerText="Número">				
+						        <f:facet class="mdl-data-table__cell--non-numeric" name="header">
+						        	<h:outputText value="Número"/>
+						        </f:facet>
+						   		<h:outputText value="#{med.numero}" />
 						    </h:column>
-						   <h:column>#{med.telefone}    
-						      <f:facet class="mdl-data-table__cell--non-numeric" name="header">Telefone</f:facet>
+						   <h:column headerText="Telefone">   
+						      	<f:facet class="mdl-data-table__cell--non-numeric" name="header">
+									<h:outputText value="Telefone"/>	
+								</f:facet>
+						   		<h:outputText value="#{med.telefone}" />
 						   </h:column>
-						     <h:column>#{med.email}    
-						      <f:facet class="mdl-data-table__cell--non-numeric" name="header">Email</f:facet>
+						     <h:column headerText="Email">    
+						      	<f:facet class="mdl-data-table__cell--non-numeric" name="header">
+						      		<h:outputText value="E-mail"/>
+						      	</f:facet>
+						   		<h:outputText value="#{med.email}" />
 						   </h:column>  
 						</h:dataTable >
 					</div>
