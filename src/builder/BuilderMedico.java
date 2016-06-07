@@ -11,6 +11,7 @@ public class BuilderMedico {
 
 		Medico medico = new Medico();
 
+		medico.setCrm(rs.getInt("crm"));
 		medico.setNome(rs.getString("nome"));
 		medico.setEspecialidade(rs.getString("especialidade"));
 		medico.setEndereco(rs.getString("endereco"));

@@ -43,7 +43,7 @@ public class MedicoDao implements iMedicoDao {
 	@Override
 	public List<Medico> listarMedico() throws SQLException {
 
-		String sql = "select Medico.nome, Especialidade.especialidade, Medico.endereco, Medico.numero,Medico.telefone, Medico.celular, Medico.email from Medico inner join Especialidade on Medico.idEspecialidade = Especialidade.idEspecialidade";
+		String sql = "select  Medico.crm, Medico.nome, Especialidade.especialidade, Medico.endereco, Medico.numero,Medico.telefone, Medico.celular, Medico.email from Medico inner join Especialidade on Medico.idEspecialidade = Especialidade.idEspecialidade";
 		PreparedStatement stmt = con.prepareStatement(sql);
 		ResultSet rs = stmt.executeQuery();
 		List<Medico> listaMedico = new ArrayList<Medico>();
@@ -62,7 +62,7 @@ public class MedicoDao implements iMedicoDao {
 
 	@Override
 	public  List<Medico> consultaMedicoCRM(int crm) throws SQLException {
-		String sql = "select Medico.nome, Especialidade.especialidade, Medico.endereco, Medico.numero,Medico.telefone, Medico.celular, Medico.email from Medico inner join Especialidade on Medico.idEspecialidade = Especialidade.idEspecialidade where Medico.crm=?";
+		String sql = "select  Medico.crm, Medico.nome, Especialidade.especialidade, Medico.endereco, Medico.numero,Medico.telefone, Medico.celular, Medico.email from Medico inner join Especialidade on Medico.idEspecialidade = Especialidade.idEspecialidade where Medico.crm=?";
 		PreparedStatement stmt = con.prepareStatement(sql);
 		stmt.setInt(1, crm);
 		ResultSet rs = stmt.executeQuery();
@@ -82,7 +82,7 @@ public class MedicoDao implements iMedicoDao {
 
 	@Override
 	public List<Medico> consultaMedicoNome(String nome) throws SQLException {
-		String sql = "select Medico.nome, Especialidade.especialidade, Medico.endereco, Medico.numero,Medico.telefone, Medico.celular, Medico.email from Medico inner join Especialidade on Medico.idEspecialidade = Especialidade.idEspecialidade where Medico.nome like ?";
+		String sql = "select  Medico.crm, Medico.nome, Especialidade.especialidade, Medico.endereco, Medico.numero,Medico.telefone, Medico.celular, Medico.email from Medico inner join Especialidade on Medico.idEspecialidade = Especialidade.idEspecialidade where Medico.nome like ?";
 		PreparedStatement stmt = con.prepareStatement(sql);
 		stmt.setString(1, "%" + nome + "%");
 		ResultSet rs = stmt.executeQuery();
