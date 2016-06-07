@@ -48,7 +48,7 @@
 	            <i class="material-icons" role="presentation">remove</i>
             </button>
             <div style="display:none">
-            	<h:commandButton id="comando" onclick="console.log('oi')"/>
+            	<h:commandButton id="comando" onclick="teste()"/>
             </div>
             <script>
             doAction = function() {
@@ -70,11 +70,11 @@
 					<div class="mdl-cell"></div>
 					<div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet">
 						<h:dataTable value="#{medmb.lista}" var="med" class="mdl-data-table mdl-js-data-table mdl-data-table--selectable dataSort">
-						  	<h:column headerText="CRM Médico">				
+						  	<h:column headerText="CRM Médico">	
 						    	<f:facet class="mdl-data-table__cell--non-numeric" name="header">
 						    		<h:outputText value="CRM Médico"/>
 						    	</f:facet>
-						    	<h:outputText value="#{med.crm}" />
+						    	<h:outputText value="#{med.crm}"/>
 						    </h:column>
 						    <h:column headerText="Nome Médico">				
 						    	<f:facet class="mdl-data-table__cell--non-numeric" name="header">
@@ -113,6 +113,12 @@
 						   		<h:outputText value="#{med.email}" />
 						   </h:column>  
 						</h:dataTable >
+						<script>
+						teste = function(){
+							var data = $(".is-checked");
+							console.log(data);
+						};
+						</script>
 					</div>
 					</div>
 				</h:form>
