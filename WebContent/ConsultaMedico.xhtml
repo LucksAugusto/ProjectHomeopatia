@@ -70,7 +70,13 @@
 					<div class="mdl-cell"></div>
 					<div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet">
 						<h:dataTable value="#{medmb.lista}" var="med" class="mdl-data-table mdl-js-data-table mdl-data-table--selectable dataSort">
-						  	<h:column headerText="Nome Médico">				
+						  	<h:column headerText="CRM Médico">				
+						    	<f:facet class="mdl-data-table__cell--non-numeric" name="header">
+						    		<h:outputText value="CRM Médico"/>
+						    	</f:facet>
+						    	<h:outputText value="#{med.crm}" />
+						    </h:column>
+						    <h:column headerText="Nome Médico">				
 						    	<f:facet class="mdl-data-table__cell--non-numeric" name="header">
 						    		<h:outputText value="Nome"/>
 						    	</f:facet>
