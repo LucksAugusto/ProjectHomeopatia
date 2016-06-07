@@ -31,6 +31,7 @@ public class LaboratorioMB implements Serializable {
 		setEditar(false);
 		setLab(new Laboratorio());
 		try {
+			
 			setLista(labDao.consultarListaLaboratorio());
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

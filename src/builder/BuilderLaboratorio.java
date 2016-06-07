@@ -7,7 +7,7 @@ import entity.Laboratorio;
 
 public class BuilderLaboratorio {
 
-	public static Laboratorio buildLaboratorio(ResultSet rs) throws SQLException {
+	public static Laboratorio buildLaboratorioCompleto(ResultSet rs) throws SQLException {
 
 		Laboratorio laboratorio = new Laboratorio();
 
@@ -23,6 +23,23 @@ public class BuilderLaboratorio {
 		laboratorio.setFax(rs.getString("fax"));
 		laboratorio.setEmail(rs.getString("email"));
 		laboratorio.setCoordenadas(rs.getString("coordenadas")); 
+		laboratorio.setAtendimento(rs.getString("atendimento"));
+		
+		return laboratorio;
+	}
+	
+	public static Laboratorio buildLaboratorioTabelas(ResultSet rs) throws SQLException {
+
+		Laboratorio laboratorio = new Laboratorio();
+
+		
+		laboratorio.setNome(rs.getString("nome"));
+		laboratorio.setEndereco(rs.getString("endereco"));
+		laboratorio.setNumero(rs.getInt("numero"));
+		laboratorio.setBairro(rs.getString("bairro")); 
+		laboratorio.setTelefone(rs.getString("telefone")); 
+		laboratorio.setFax(rs.getString("fax"));
+		laboratorio.setEmail(rs.getString("email"));
 		laboratorio.setAtendimento(rs.getString("atendimento"));
 		
 		return laboratorio;

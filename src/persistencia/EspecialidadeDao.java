@@ -34,7 +34,7 @@ public class EspecialidadeDao implements iEspecialidadeDao {
 		}
 		rs.close();
 		stmt.close();
-		gDao.fechaConexao();
+	
 		return listaEspecialidade;
 	}
 
@@ -45,7 +45,7 @@ public class EspecialidadeDao implements iEspecialidadeDao {
 		stmt.setString(1, especialidade.getEspecialidade());
 		stmt.executeUpdate();
 		stmt.close();
-		gDao.fechaConexao();
+		
 		
 		
 	}

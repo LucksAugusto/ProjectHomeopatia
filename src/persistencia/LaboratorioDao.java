@@ -67,7 +67,7 @@ public class LaboratorioDao implements iLaboratorioDao {
 
 	@Override
 	public List<Laboratorio> consultarListaLaboratorio() throws SQLException {
-		String sql = "select idLaboratorio, nome from Laboratorio";
+		String sql = "select nome, endereco, numero, bairro, telefone, fax, email, atendimento from Laboratorio";
 		PreparedStatement stmt = con.prepareStatement(sql);
 		ResultSet rs = stmt.executeQuery();
 		List<Laboratorio> listaLaboratorio = new ArrayList<Laboratorio>();
@@ -85,16 +85,18 @@ public class LaboratorioDao implements iLaboratorioDao {
 		return listaLaboratorio;
 	}
 
+
+
 	@Override
 	public List<Laboratorio> consultarLaboratorioNome(String nome) throws SQLException {
-		String sql = "select * from Laboratorio where nome like ?";
+		String sql = "select nome, endereco, numero, bairro, telefone, fax, email, atendimento from Laboratorio where nome like ?";
 		PreparedStatement stmt = con.prepareStatement(sql);
 		stmt.setString(1, "%" + nome + "%");
 		ResultSet rs = stmt.executeQuery();
 		List<Laboratorio> listaLaboratorio = new ArrayList<Laboratorio>();
 		while (rs.next()) {
 			Laboratorio laboratorio = new Laboratorio();
-			laboratorio = BuilderLaboratorio.buildLaboratorio(rs);
+			laboratorio = BuilderLaboratorio.buildLaboratorioTabelas(rs);
 			listaLaboratorio.add(laboratorio);
 		}
 		rs.close();
@@ -113,7 +115,7 @@ public class LaboratorioDao implements iLaboratorioDao {
 		Laboratorio laboratorio = null;
 		if(rs.next()){
 			laboratorio = new Laboratorio();
-			laboratorio = BuilderLaboratorio.buildLaboratorio(rs);
+			laboratorio = BuilderLaboratorio.buildLaboratorioCompleto(rs);
 		}
 		
 		rs.close();
@@ -129,7 +131,6 @@ public class LaboratorioDao implements iLaboratorioDao {
 		PreparedStatement stmt = con.prepareStatement(sql);
 		stmt.setInt(1, codigo);
 		stmt.executeUpdate();
-		
 		stmt.close();
 		
 	}
