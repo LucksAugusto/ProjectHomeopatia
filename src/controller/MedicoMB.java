@@ -26,7 +26,7 @@ public class MedicoMB implements Serializable{
 	private Medico med;
 	private List<Medico> lista = new ArrayList<Medico>();
 	
-	public MedicoMB(){
+	/*public MedicoMB(){
 		med = new Medico();
 		medDao =new MedicoDao();
 		try {
@@ -38,7 +38,7 @@ public class MedicoMB implements Serializable{
 			e.printStackTrace();
 		}
 		
-	}
+	}*/
 	
 	
 
