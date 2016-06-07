@@ -69,44 +69,26 @@
 					<div class="mdl-grid">
 					<div class="mdl-cell"></div>
 					<div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet">
-						<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable dataSort">
-						  <thead>
-						    <tr>
-						      <th class="mdl-data-table__cell--non-numeric">Nome Médico</th>
-						      <th class="mdl-data-table__cell--non-numeric">Especialidade</th>
-						      <th class="mdl-data-table__cell--non-numeric">Endereço</th>
-						      <th>Número</th>
-						      <th class="mdl-data-table__cell--non-numeric">Telefone</th>
-						      <th class="mdl-data-table__cell--non-numeric">Email</th>
-						    </tr>
-						  </thead>
-						  <tbody>
-						    <tr>
-						      <td class="mdl-data-table__cell--non-numeric">WWWWWWWWW</td>
-						      <td class="mdl-data-table__cell--non-numeric">Cardiologista</td>
-						      <td class="mdl-data-table__cell--non-numeric">Rua do Hospital</td>
-						      <td>250</td>
-						      <td class="mdl-data-table__cell--non-numeric">20234849</td>
-						      <td class="mdl-data-table__cell--non-numeric">Anderson@gmail.com</td>
-						    </tr>
-						    <tr>
-						      <td class="mdl-data-table__cell--non-numeric">ZZZZZZZ</td>
-						      <td class="mdl-data-table__cell--non-numeric">Cardiologista</td>
-						      <td class="mdl-data-table__cell--non-numeric">Rua do Hospital</td>
-						      <td>250</td>
-						      <td class="mdl-data-table__cell--non-numeric">20234849</td>
-						      <td class="mdl-data-table__cell--non-numeric">Anderson@gmail.com</td>
-						    </tr>
-						    <tr>
-						      <td class="mdl-data-table__cell--non-numeric">XXXXXXXXXX</td>
-						      <td class="mdl-data-table__cell--non-numeric">Cardiologista</td>
-						      <td class="mdl-data-table__cell--non-numeric">Rua do Hospital</td>
-						      <td>250</td>
-						      <td class="mdl-data-table__cell--non-numeric">20234849</td>
-						      <td class="mdl-data-table__cell--non-numeric">Anderson@gmail.com</td>
-						    </tr>						  
-						  </tbody>
-						</table>
+						<h:dataTable class="mdl-data-table mdl-js-data-table mdl-data-table--selectable dataSort" value="Pesquisar" action="#{medmb.pesquisar}" var="med">
+						  	<h:column>#{med.nome}					
+						         <f:facet class="mdl-data-table__cell--non-numeric" name="header">Nome Médico</f:facet>
+						    </h:column>
+						   <h:column>#{med.especialidade}    
+						      <f:facet class="mdl-data-table__cell--non-numeric" name="header">Especialidade</f:facet>
+						   </h:column>
+						     <h:column>#{med.endereco}    
+						      <f:facet class="mdl-data-table__cell--non-numeric" name="header">Endereço</f:facet>
+						   </h:column>
+						   	<h:column>#{med.numero}					
+						         <f:facet class="mdl-data-table__cell--non-numeric" name="header">Numero</f:facet>
+						    </h:column>
+						   <h:column>#{med.telefone}    
+						      <f:facet class="mdl-data-table__cell--non-numeric" name="header">Telefone</f:facet>
+						   </h:column>
+						     <h:column>#{med.email}    
+						      <f:facet class="mdl-data-table__cell--non-numeric" name="header">Email</f:facet>
+						   </h:column>  
+						</h:dataTable >
 					</div>
 					</div>
 				</h:form>

@@ -42,7 +42,7 @@ public class MedicoDao implements iMedicoDao {
 
 	@Override
 	public List<Medico> listarMedico() throws SQLException {
-		String sql = "select * from Medico";
+		String sql = "select Medico.nome, Especialidade.especialidade, Medico.endereco, Medico.telefone, Medico.email from Medico inner join Especialidade on Medico.idEspecialidade = Especialidade.idEspecialidade";
 		PreparedStatement stmt = con.prepareStatement(sql);
 		ResultSet rs = stmt.executeQuery();
 		List<Medico> listaMedico = new ArrayList<Medico>();
@@ -61,7 +61,7 @@ public class MedicoDao implements iMedicoDao {
 
 	@Override
 	public  List<Medico> consultaMedicoCRM(int crm) throws SQLException {
-		String sql = "select * from Medico where crm=?";
+		String sql = "select Medico.nome, Especialidade.especialidade, Medico.endereco, Medico.telefone, Medico.email from Medico inner join Especialidade on Medico.idEspecialidade = Especialidade.idEspecialidade where Medico.crm=?";
 		PreparedStatement stmt = con.prepareStatement(sql);
 		stmt.setInt(1, crm);
 		ResultSet rs = stmt.executeQuery();
@@ -81,7 +81,7 @@ public class MedicoDao implements iMedicoDao {
 
 	@Override
 	public List<Medico> consultaMedicoNome(String nome) throws SQLException {
-		String sql = "select * from Medico where nome like ?";
+		String sql = "select Medico.nome, Especialidade.especialidade, Medico.endereco, Medico.telefone, Medico.email from Medico inner join Especialidade on Medico.idEspecialidade = Especialidade.idEspecialidade where Medico.nome like ?";
 		PreparedStatement stmt = con.prepareStatement(sql);
 		stmt.setString(1, "%" + nome + "%");
 		ResultSet rs = stmt.executeQuery();

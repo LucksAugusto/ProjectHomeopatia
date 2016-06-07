@@ -65,7 +65,7 @@ public class MedicoMB implements Serializable{
 
 	public void pesquisar() { 
 		try {
-			setLista(medDao.consultaMedicoNome(med.getNome()));
+			setLista(medDao.listarMedico());
 			FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, 
 				"Foram encontrados " + lista.size() + " registros", "");
 		FacesContext.getCurrentInstance().addMessage(null, msg);
