@@ -1,4 +1,4 @@
-/builder/
-/controller/
-/entity/
 /persistencia/
+/controller/
+/builder/
+/entity/

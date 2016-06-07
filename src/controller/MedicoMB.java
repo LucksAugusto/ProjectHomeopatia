@@ -29,6 +29,14 @@ public class MedicoMB implements Serializable{
 	public MedicoMB(){
 		med = new Medico();
 		medDao =new MedicoDao();
+		try {
+			
+			setLista(medDao.listarMedico());
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 	
@@ -65,6 +73,7 @@ public class MedicoMB implements Serializable{
 
 	public void pesquisar() { 
 		try {
+			
 			setLista(medDao.listarMedico());
 			FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, 
 				"Foram encontrados " + lista.size() + " registros", "");

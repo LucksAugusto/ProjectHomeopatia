@@ -4,7 +4,7 @@ public class Medico {
 
 	private String nome;
 	private int crm;
-	private int especialidade;
+	private String especialidade;
 	private String endereco;
 	private int numero;
 	private String bairro;
@@ -28,10 +28,10 @@ public class Medico {
 	public void setCrm(int crm) {
 		this.crm = crm;
 	}
-	public int getEspecialidade() {
+	public String getEspecialidade() {
 		return especialidade;
 	}
-	public void setEspecialidade(int especialidade) {
+	public void setEspecialidade(String especialidade) {
 		this.especialidade = especialidade;
 	}
 	public String getEndereco() {
