@@ -39,7 +39,7 @@ public class LaboratorioDao implements iLaboratorioDao {
 		stmt.setString(12, lab.getAtendimento());
 		stmt.executeUpdate();
 		stmt.close();
-		gDao.fechaConexao();
+	
 	}
 
 	@Override
@@ -59,26 +59,28 @@ public class LaboratorioDao implements iLaboratorioDao {
 		stmt.setString(11, lab.getCoordenadas());
 		stmt.setString(12, lab.getAtendimento());
 		stmt.setInt(13, lab.getIdLaboratorio());
+		stmt.executeUpdate();
 		
 		stmt.close();
-		gDao.fechaConexao();
+		
 	}
 
 	@Override
 	public List<Laboratorio> consultarListaLaboratorio() throws SQLException {
-		String sql = "select * from Laboratorio";
+		String sql = "select idLaboratorio, nome from Laboratorio";
 		PreparedStatement stmt = con.prepareStatement(sql);
 		ResultSet rs = stmt.executeQuery();
 		List<Laboratorio> listaLaboratorio = new ArrayList<Laboratorio>();
 		while (rs.next()) {
 			Laboratorio laboratorio = new Laboratorio();
-			laboratorio = BuilderLaboratorio.buildLaboratorio(rs);
+			laboratorio.setIdLaboratorio(rs.getInt("idLaboratorio"));
+			laboratorio.setNome(rs.getString("nome"));
 			listaLaboratorio.add(laboratorio);
 		}
 		
 		rs.close();
 		stmt.close();
-		gDao.fechaConexao();
+	
 		
 		return listaLaboratorio;
 	}
@@ -97,40 +99,39 @@ public class LaboratorioDao implements iLaboratorioDao {
 		}
 		rs.close();
 		stmt.close();
-		gDao.fechaConexao();
+		
 		
 		return listaLaboratorio;
 	}
 
 	@Override
-	public List<Laboratorio> consultarLaboratorioCodigo(int codigo) throws SQLException {
+	public Laboratorio consultarLaboratorioCodigo(int codigo) throws SQLException {
 		String sql = "select * from Laboratorio where idLaboratorio=?";
 		PreparedStatement stmt = con.prepareStatement(sql);
 		stmt.setInt(1, codigo);
 		ResultSet rs = stmt.executeQuery();
-		List<Laboratorio> listaLaboratorio = new ArrayList<Laboratorio>();
-		while (rs.next()) {
-			Laboratorio laboratorio = new Laboratorio();
+		Laboratorio laboratorio = null;
+		if(rs.next()){
+			laboratorio = new Laboratorio();
 			laboratorio = BuilderLaboratorio.buildLaboratorio(rs);
-			listaLaboratorio.add(laboratorio);
 		}
+		
 		rs.close();
 		stmt.close();
-		gDao.fechaConexao();
 		
-		return listaLaboratorio;
+		return laboratorio;
 	}
 
 	@Override
 	public void excluirLaboratorio(int codigo) throws SQLException {
+		System.out.println(codigo);
 		String sql = "delete from Laboratorio where idLaboratorio=?";
 		PreparedStatement stmt = con.prepareStatement(sql);
 		stmt.setInt(1, codigo);
-		stmt.executeQuery();
+		stmt.executeUpdate();
 		
 		stmt.close();
-		gDao.fechaConexao();
-
+		
 	}
 
 }
