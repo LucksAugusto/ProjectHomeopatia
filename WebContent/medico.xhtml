@@ -37,6 +37,7 @@
     </nav>
   </div>
   <main class="mdl-layout__content">
+  
   <div class="page-content">
   <!-- Your content goes here -->
   	 <div class="mdl-card mdl-cell mdl-cell--1-offset mdl-cell--10-col mdl-cell--8-col-tablet mdl-shadow--8dp mdl-color--grey-100">
@@ -63,12 +64,16 @@
 				<div class="mdl-grid">
 				<div class="mdl-cell mdl-cell--12-col cel-cell--12-col-tablet">
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				            <select id="especialidade" class="mdl-textfield__input ">
-				                <option value=""></option>
-				                <option value="1">Exemplo</option>
-				            </select>
-				            <h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600 is-dirty" for="especialidade" value="Especialidade..."/>
-					</div>
+				         				            
+				             <h:outputLabel for="especialidade" />
+							 <h:selectOneMenu id="especialidade" class="mdl-textfield__input " value="#{medmb.med.especialidade}">
+									 <f:selectItem itemValue="" />
+									 <f:selectItems value="#{medmb.especialidades}" />
+							 </h:selectOneMenu>
+
+				            <h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600 is-dirty" for="especialidade" value="Especialidades..."/>
+				        </div>
+				</div>
 				</div>
 				</div>
 				<div class="mdl-grid">
@@ -136,13 +141,14 @@
 				</div>
 				</div>
 			</div>
-			</div>
+		
 			<div class="mdl-grid">
 			<div class="mdl-cell mdl-cell--5-offset">
-				<h:commandButton class="mdl-button mdl-js-button mdl-button--primary" value = "Cadastrar" action="#{medmb.adicionar}"/>
+				<h:commandButton class="mdl-button mdl-js-button mdl-button--primary" value = "Cadastrar" action="#{medmb.salvar}"/>
 			</div>
 			</div>
 		</h:form>
+		
 	</div>
 	</div> 
 		<p:growl id="messages" showDetail="true" />
