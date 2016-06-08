@@ -55,29 +55,44 @@ public class MedicoDao implements iMedicoDao {
 
 		rs.close();
 		stmt.close();
-		gDao.fechaConexao();
 
 		return listaMedico;
 	}
 
 	@Override
-	public  List<Medico> consultaMedicoCRM(int crm) throws SQLException {
+	public  Medico consultaMedicoCRM(int crm) throws SQLException {
 		String sql = "select  Medico.crm, Medico.nome, Especialidade.especialidade, Medico.endereco, Medico.numero,Medico.telefone, Medico.celular, Medico.email from Medico inner join Especialidade on Medico.idEspecialidade = Especialidade.idEspecialidade where Medico.crm=?";
 		PreparedStatement stmt = con.prepareStatement(sql);
 		stmt.setInt(1, crm);
 		ResultSet rs = stmt.executeQuery();
-		List<Medico> listaMedico = new ArrayList<Medico>();
-		while (rs.next()) {
-			Medico medico = new Medico();
+		Medico medico = null;
+		if (rs.next()) {
+			medico = new Medico();
 			medico = BuilderMedico.buildMedico(rs);
-			listaMedico.add(medico);
 		}
 
 		rs.close();
 		stmt.close();
-		gDao.fechaConexao();
 
-		return listaMedico;
+		return medico;
+	}
+	
+	@Override
+	public  Medico consultaMedicoAlterar(int crm) throws SQLException {
+		String sql = "select * from Medico inner join Especialidade on Medico.idEspecialidade = Especialidade.idEspecialidade where Medico.crm=?";
+		PreparedStatement stmt = con.prepareStatement(sql);
+		stmt.setInt(1, crm);
+		ResultSet rs = stmt.executeQuery();
+		Medico medico = null;
+		if (rs.next()) {
+			medico = new Medico();
+			medico = BuilderMedico.buildMedicoCompleto(rs);
+		}
+
+		rs.close();
+		stmt.close();
+
+		return medico;
 	}
 
 	@Override
@@ -95,7 +110,6 @@ public class MedicoDao implements iMedicoDao {
 		
 		rs.close();
 		stmt.close();
-		gDao.fechaConexao();
 		
 		return listaMedico;
 	}
@@ -120,8 +134,6 @@ public class MedicoDao implements iMedicoDao {
 		stmt.executeQuery();
 		
 		stmt.close();
-		gDao.fechaConexao();
-		
 	}
 
 	@Override
@@ -131,7 +143,6 @@ public class MedicoDao implements iMedicoDao {
 		stmt.setInt(1, crm);
 		stmt.executeQuery();
 		stmt.close();
-		gDao.fechaConexao();
 	}
 
 }

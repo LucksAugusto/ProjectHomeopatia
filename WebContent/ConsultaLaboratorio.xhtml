@@ -47,9 +47,7 @@
 	    	<button onclick="doAction()" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--primary fab-bottom-right" id="refresh">
 	            <i class="material-icons" role="presentation">remove</i>
             </button>
-            <div style="display:none">
-            	<h:commandButton id="comando" onclick="console.log('oi')"/>
-            </div>
+           
             <script>
             doAction = function() {
                 var hidden = $("#comando");
@@ -71,7 +69,6 @@
 					<div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet">
 						<h:dataTable value="#{labmb.lista}" var="lab" class="mdl-data-table mdl-js-data-table mdl-data-table--selectable dataSort">
 						
-						  	
 						  	<h:column headerText="Nome">				
 						    	<f:facet class="mdl-data-table__cell--non-numeric" name="header">
 						    		<h:outputText value="Nome Lab"/>
@@ -79,12 +76,63 @@
 						    	<h:outputText value="#{lab.nome}" />
 						    </h:column>
 						    
+						    <h:column headerText="Endereco">				
+						    	<f:facet class="mdl-data-table__cell--non-numeric" name="header">
+						    		<h:outputText value="Endereço"/>
+						    	</f:facet>
+						    	<h:outputText value="#{lab.endereco}" />
+						    </h:column>
+						    
+						    <h:column headerText="Numero">				
+						    	<f:facet class="mdl-data-table__cell--non-numeric" name="header">
+						    		<h:outputText value="Numero"/>
+						    	</f:facet>
+						    	<h:outputText value="#{lab.numero}" />
+						    </h:column>
+						    
+						    <h:column headerText="Bairro">				
+						    	<f:facet class="mdl-data-table__cell--non-numeric" name="header">
+						    		<h:outputText value="Bairro"/>
+						    	</f:facet>
+						    	<h:outputText value="#{lab.bairro}" />
+						    </h:column>
+						    
+						    	  	<h:column headerText="Telefone">				
+						    	<f:facet class="mdl-data-table__cell--non-numeric" name="header">
+						    		<h:outputText value="Telefone"/>
+						    	</f:facet>
+						    	<h:outputText value="#{lab.telefone}" />
+						    </h:column>
+						    
+						    <h:column headerText="Fax">				
+						    	<f:facet class="mdl-data-table__cell--non-numeric" name="header">
+						    		<h:outputText value="Fax"/>
+						    	</f:facet>
+						    	<h:outputText value="#{lab.fax}" />
+						    </h:column>
+						    
+						    <h:column headerText="Email">				
+						    	<f:facet class="mdl-data-table__cell--non-numeric" name="header">
+						    		<h:outputText value="Email"/>
+						    	</f:facet>
+						    	<h:outputText value="#{lab.email}" />
+						    </h:column>
+						    
+						    <h:column headerText="Atendimento">				
+						    	<f:facet class="mdl-data-table__cell--non-numeric" name="header">
+						    		<h:outputText value="Atendimento"/>
+						    	</f:facet>
+						    	<h:outputText value="#{lab.atendimento}" />
+						    </h:column>
+						    
 							<h:column headerText="Operacoes">
 							<f:facet class="mdl-data-table__cell--non-numeric" name="header">
 						    		<h:outputText value="Operações"/>
 						    	</f:facet>
-						    	<h:commandButton value="Remover" action="#{labmb.remover(lab.idLaboratorio)}"/>
+						    	
+						    		<h:commandButton value="Remover"   id="comando" action="#{labmb.remover(lab.idLaboratorio)}"/>
 						    		<h:commandButton value="Editar" action="#{labmb.alterar(lab)}"/>
+							
 							</h:column>
 						</h:dataTable >
 					</div>

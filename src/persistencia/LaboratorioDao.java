@@ -73,9 +73,9 @@ public class LaboratorioDao implements iLaboratorioDao {
 		List<Laboratorio> listaLaboratorio = new ArrayList<Laboratorio>();
 		while (rs.next()) {
 			Laboratorio laboratorio = new Laboratorio();
-			laboratorio.setIdLaboratorio(rs.getInt("idLaboratorio"));
-			laboratorio.setNome(rs.getString("nome"));
+			laboratorio = BuilderLaboratorio.buildLaboratorioTabelas(rs);
 			listaLaboratorio.add(laboratorio);
+			
 		}
 		
 		rs.close();
@@ -85,7 +85,24 @@ public class LaboratorioDao implements iLaboratorioDao {
 		return listaLaboratorio;
 	}
 
-
+	public List<Laboratorio> consultarListaLaboratorioID() throws SQLException {
+		String sql = "select * from Laboratorio";
+		PreparedStatement stmt = con.prepareStatement(sql);
+		ResultSet rs = stmt.executeQuery();
+		List<Laboratorio> listaLaboratorio = new ArrayList<Laboratorio>();
+		while (rs.next()) {
+			Laboratorio laboratorio = new Laboratorio();
+			laboratorio = BuilderLaboratorio.buildLaboratorioCompleto(rs);
+			listaLaboratorio.add(laboratorio);
+			
+		}
+		
+		rs.close();
+		stmt.close();
+	
+		
+		return listaLaboratorio;
+	}
 
 	@Override
 	public List<Laboratorio> consultarLaboratorioNome(String nome) throws SQLException {

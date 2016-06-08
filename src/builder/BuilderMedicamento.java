@@ -10,6 +10,7 @@ public class BuilderMedicamento {
 	public static Medicamento buildMedicamento(ResultSet rs) throws SQLException {
 		Medicamento medicamento = new Medicamento();
 		
+		medicamento.setIdMedicamento(rs.getInt("idMedicamento"));
 		medicamento.setNome(rs.getString("nome"));
 		medicamento.setPotencia(rs.getString("potencia"));
 		medicamento.setPaciente(rs.getString("paciente"));

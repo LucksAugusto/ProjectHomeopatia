@@ -66,10 +66,13 @@
 						<h:inputText class="mdl-textfield__input" type="text" id="medico"  value="#{medimb.med.crmMedico}"/>
 	   					<h:outputLabel class="mdl-textfield__label mdl-color-text-grey-600" for="medico" value="Médico..."/>-->
 	   					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				            <select id="medico" class="mdl-textfield__input ">
-				                <option value=""></option>
-				                <option value="1">Exemplo</option>
-				            </select>
+				         				            
+				             <h:outputLabel for="medico" />
+							 <h:selectOneMenu id="medico" class="mdl-textfield__input " value="#{medimb.med.crmMedico}">
+									 <f:selectItem itemValue="" />
+									 <f:selectItems value="#{medimb.medicos}" />
+							 </h:selectOneMenu>
+
 				            <h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600 is-dirty" for="medico" value="Médico..."/>
 				        </div>
 					<!--</div>-->
@@ -83,10 +86,16 @@
 				</div>
 				<div class="mdl-grid">
 				<div class="mdl-cell mdl-cell--12-col cel-cell--12-col-tablet">
-					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-						<h:inputText class="mdl-textfield__input" type="text" id="idLaboratorio"  value="#{medimb.med.idLaboratorio}"/>
-	   					<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="idLaboratorio" value="ID Laboratório..."/>
-					</div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				         				            
+				             <h:outputLabel for="laboratorio" />
+							 <h:selectOneMenu id="laboratorio" class="mdl-textfield__input " value="#{medimb.med.idLaboratorio}">
+									 <f:selectItem itemValue="" />
+									 <f:selectItems value="#{medimb.laboratorios}" />
+							 </h:selectOneMenu>
+
+				            <h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600 is-dirty" for="laboratorio" value="Laboratorio..."/>
+				        </div>
 				</div>
 				</div>
 				<div class="mdl-grid">
@@ -141,13 +150,33 @@
 			</div>
 			<div class="mdl-grid">
 			<div class="mdl-cell mdl-cell--5-offset">
-				<h:commandButton value="Cadastrar" class="mdl-button mdl-js-button mdl-button--primary" action="#{medimb.cadastrar}"/>
+				<h:commandButton value="Cadastrar" class="mdl-button mdl-js-button mdl-button--primary" action="#{medimb.salvar}"/>
 			</div>
 			</div>
 		</h:form>
 	</div>
 	</div>
-	</div>         
+	<p:growl id="messages" showDetail="true" />
+		<p:gmap id="gmap" center="-23.5280419,-46.527416" zoom="15" type="ROADMAP" style="width:100%;height:400px"
+		    model="#{addMarkersView.emptyModel}" onPointClick="handlePointClick(event);" widgetVar="map" /> 
+		<p:dialog widgetVar="dlg" showEffect="fade">
+		    <h:form prependId="false">
+		        <h:panelGrid columns="2">
+		            <h:outputLabel for="title" value="Title:" />
+		            <p:inputText id="title" value="#{addMarkersView.title}" />
+		 
+		            <f:facet name="footer">
+		                <p:commandButton value="Add" actionListener="#{addMarkersView.addMarker}" update=":messages" oncomplete="markerAddComplete()" />
+		                <p:commandButton value="Cancel" onclick="return cancel()" />
+		            </f:facet>
+		        </h:panelGrid>
+		 
+		        <h:inputHidden id="lat" value="#{addMarkersView.lat}" />
+		        <h:inputHidden id="lng" value="#{addMarkersView.lng}" />
+		    </h:form>
+		</p:dialog>
+	</div>  
+	       
 	</div>
     </main>
   </div>

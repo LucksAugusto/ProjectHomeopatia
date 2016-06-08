@@ -31,10 +31,8 @@ public class LaboratorioMB implements Serializable {
 		setEditar(false);
 		setLab(new Laboratorio());
 		try {
-			
 			setLista(labDao.consultarListaLaboratorio());
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -48,18 +46,7 @@ public class LaboratorioMB implements Serializable {
 		this.lab = lab;
 	}
 
-	public void adicionar() {
-		try {
-			labDao.cadastraLaboratorio(lab);
-			lab = new Laboratorio();
-
-			FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Laboratório adicionado com sucesso", "");
-			FacesContext.getCurrentInstance().addMessage(null, msg);
-		} catch (SQLException e) {
-
-			e.printStackTrace();
-		}
-	}
+	
 
 	public void salvar() {
 		FacesMessage msg = null;
@@ -67,14 +54,14 @@ public class LaboratorioMB implements Serializable {
 			if (editar) {
 
 				labDao.alterarLaboratorio(lab);
-				
+
 				msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Laboratório alterado com sucesso", "");
-			setEditar(false);	
+				setEditar(false);
 			} else {
 				labDao.cadastraLaboratorio(lab);
-				
+
 				msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Laboratório adicionado com sucesso", "");
-				
+
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
