@@ -6,7 +6,7 @@
 		xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-	<title>Cadastro de Medicamentos</title>
+	<title>Cadastro de Receita</title>
 	<link type="text/css" rel="stylesheet" href="css/material.min.css" />
 	<link type="text/css" rel="stylesheet" href="font/fonts.css" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
@@ -28,7 +28,7 @@
     </div>
   </header>
   <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">HomeoApp</span>
+    <span class="mdl-layout-title">HomeSys</span>
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="">Especialidades</a>
       <a class="mdl-navigation__link" href="">Laboratório</a>
@@ -44,7 +44,7 @@
   	  <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet">
 		<h:form action="#">
 			<div class="mdl-grid">
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell--5-offset">
 				            <select id="medico" class="mdl-textfield__input ">
 				                <option value=""></option>
 				                <option value="1">Exemplo</option>
@@ -53,21 +53,78 @@
 					</div>
 			</div>
 			<div class="mdl-grid">
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell--5-offset">
 					<h:inputText class="mdl-textfield__input" type="text" id="paciente" value="#{recmb.rec.paciente}"/>
 					<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="paciente" value="Paciente..."/>
 				</div>
 			</div>
 			<div class="mdl-grid">
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell--5-offset" >
 					<h:inputText class="mdl-textfield__input" type="text" id="dataReceita" value="#{recmb.rec.dataReceita}">
 						<f:convertDateTime	pattern="dd/MM/yyyy" locale="pt_BR" timeZone="America/Sao_Paulo"/>
 					</h:inputText>
 					<h:outputLabel class="mdl-textfield__label mdl-color-text--grey-600" for="dataReceita" value="Data da Receita..."/>
 				</div>
 			</div>	
+			<h:dataTable value="#{medicomb.lista}" var="lab" class="mdl-data-table mdl-js-data-table mdl-data-table--selectable dataSort">
+						  	<h:column headerText="Nome">				
+						    	<f:facet class="mdl-data-table__cell--non-numeric" name="header">
+						    		<h:outputText value="Nome Medicamento"/>
+						    	</f:facet>
+						    	<h:outputText value="#{lab.nome}" />
+						    </h:column>
+						    <h:column headerText="Medico">				
+						    	<f:facet class="mdl-data-table__cell--non-numeric" name="header">
+						    		<h:outputText value="Medico"/>
+						    	</f:facet>
+						    	<h:outputText value="#{lab.endereco}" />
+						    </h:column>
+						    <h:column headerText="Numero">				
+						    	<f:facet class="mdl-data-table__cell--non-numeric" name="header">
+						    		<h:outputText value="Numero"/>
+						    	</f:facet>
+						    	<h:outputText value="#{lab.numero}" />
+						    </h:column>
+						    <h:column headerText="Composicao">				
+						    	<f:facet class="mdl-data-table__cell--non-numeric" name="header">
+						    		<h:outputText value="Composiçao"/>
+						    	</f:facet>
+						    	<h:outputText value="#{lab.bairro}" />
+						    </h:column>
+						    	  	<h:column headerText="Data Vencimento">				
+						    	<f:facet class="mdl-data-table__cell--non-numeric" name="header">
+						    		<h:outputText value="Data Vencimento"/>
+						    	</f:facet>
+						    	<h:outputText value="#{lab.telefone}" />
+						    </h:column>
+						    <h:column headerText="Conteudo">				
+						    	<f:facet class="mdl-data-table__cell--non-numeric" name="header">
+						    		<h:outputText value="Conteudo"/>
+						    	</f:facet>
+						    	<h:outputText value="#{lab.fax}" />
+						    </h:column>
+						    <h:column headerText="Embalagem">				
+						    	<f:facet class="mdl-data-table__cell--non-numeric" name="header">
+						    		<h:outputText value="Embalagem"/>
+						    	</f:facet>
+						    	<h:outputText value="#{lab.email}" />
+						    </h:column>
+						    <h:column headerText="Observacao">				
+						    	<f:facet class="mdl-data-table__cell--non-numeric" name="header">
+						    		<h:outputText value="Observacao"/>
+						    	</f:facet>
+						    	<h:outputText value="#{lab.atendimento}" />
+						    </h:column>
+							<h:column headerText="Operacoes">
+							<f:facet class="mdl-data-table__cell--non-numeric" name="header">
+						    		<h:outputText value="Operações"/>
+						    	</f:facet>
+						    		<h:commandButton value="Remover"   id="comando" action="#{labmb.remover(lab.idLaboratorio)}"/>
+						    		<h:commandButton value="Editar" action="#{labmb.alterar(lab)}"/>
+							</h:column>
+						</h:dataTable >
 			<div class="mdl-grid">
-			<div class="mdl-cell mdl-cell--3-offset">
+			<div class="mdl-cell mdl-cell--6-offset">
 				<h:commandButton class="mdl-button mdl-js-button mdl-button--primary" value="Cadastrar" action="#{recmb.adicionar}"/>
 			</div>
 			</div>
